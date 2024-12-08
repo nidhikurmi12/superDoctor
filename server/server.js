@@ -15,6 +15,9 @@ app.use(cookieParser());
 const port = EnvVar.port;
 DbConn();
 
+app.get('/',(req,res)=>{
+  return res.status(200).send({message:"server is running in dev mode"})
+})
 app.use("/api/v1", allroutes);
 
 app.listen(port, () => {
